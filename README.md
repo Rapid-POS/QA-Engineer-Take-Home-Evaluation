@@ -1,3 +1,4 @@
+
 # QA-Engineer-Take-Home-Evaluation
 This document will list the steps a candidate for the QA Engineer position will perform to evaluate skill level, proficiency, and ability to deliver a solution meeting the requirements in a timely manner.
 
@@ -28,17 +29,31 @@ This document will list the steps a candidate for the QA Engineer position will 
 
 ## Deliverables:
 Place the following deliverables in a repository on your GitHub account along with a README containing your full name and which method or job site you used to reach this repository. Send an invitation to your GitHub repository to Rapid POS at `recruiting.programmer@rapidpos.com`
-	- Test Case Design Document
-	- Automation Script(s)
-	- Test Execution Report
+- Test Case Design Document
+- Automation Script(s)
+- Test Execution Report
 
 ## Evaluation Criteria
-	- Test Case Design
-	- Coverage of positive and negative test cases
-	- Coverage of edge cases
-	- Coverage of invalid inputs
-	- Clarity and completeness of the test cases
+- Test Case Design
+- Coverage of positive and negative test cases
+- Coverage of edge cases
+- Coverage of invalid inputs
+- Clarity and completeness of the test cases
 
-## Additonal Information
-	- Some responses may be intentionally delayed or incorrect to test the candidate's ability to handle such scenarios.
-	- Consider edge cases like empty inputs, special characters, and long inputs.
+## Additional Information
+- Some responses may be intentionally delayed or incorrect to test the candidate's ability to handle such scenarios.
+- Consider edge cases like empty inputs, special characters, and long inputs.
+
+## Username Triggers
+- Empty Username or Password:
+    -- Any request with an empty username or password will return 400 Bad Request with the message "Username and password are required."
+- Invalid Login:
+-- Username containing "invalid" (e.g., "invaliduser@example.com") will return 401 Unauthorized.
+- Malformed JSON Response:
+-- Username containing "malformed" (e.g., "malformeduser@example.com") will return a malformed JSON response.
+- Server Error:
+-- Username containing "error" (e.g., "erroruser@example.com") will return 500 Internal Server Error.
+- Slow Response:
+-- Username containing "slow" (e.g., "slowuser@example.com") will introduce a delay of 2 seconds before returning a response.
+- Successful Login:
+-- Any other valid username will return 200 OK with a JWT token in the response.
